@@ -1,0 +1,65 @@
+.app-base {
+  width: 100%;
+  height: 100%;
+}
+
+.main-title {
+  text-align: center;
+  color: #000; 
+  font-family: Bebas Neue ;
+}
+
+
+/* Slots Style  */
+.slots {
+  margin-top: 50px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: pink;
+  border-radius: 30px;
+  gap: 20px;
+}
+
+/* REEL styles class */
+.reel {
+  width: 89px;
+  height: 200px;
+  background-color:#fff ;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 0 10px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.spin-button {
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: pink;
+  cursor: pointer;
+  border: none;
+}
+
+.spin-button:hover {
+  background-color: #e74c3c; 
+
+}
+
+.control-ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button-base {
+  margin-right: 15px;
+}
