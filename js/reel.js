@@ -1,12 +1,14 @@
 class Reel {
   constructor() {
-    this.symbolArray = [
+    this.defaultSymbols = [
       { symbol: "🍒", value: 10 },
       { symbol: "🍇", value: 20 },
       { symbol: "🍋", value: 30 },
       { symbol: "🍉", value: 40 },
       { symbol: "🍊", value: 60 },
     ];
+
+    this.symbolArray = [...this.defaultSymbols];
 
     this.element = document.createElement("div");
     this.element.classList.add("reel");
@@ -22,8 +24,12 @@ class Reel {
     }
   }
 
-  spin() { 
+  spin(isGodMode) { 
     this.reelSymbolShuffler();
+    if(isGodMode) {
+      this.symbolArray = [...this.defaultSymbols];
+    }
+
     this.spinInterval = setInterval(() => {
       this.element.textContent = this.symbolArray[this.currentSymbolIndex].symbol;
       this.currentSymbolIndex = (this.currentSymbolIndex + 1) % this.symbolArray.length;

@@ -63,3 +63,7 @@
 .button-base {
   margin-right: 15px;
 }
+
+.god-mode-button.active {
+  background-color: #000;
+}
