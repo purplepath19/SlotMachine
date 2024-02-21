@@ -47,6 +47,16 @@
   cursor: pointer;
   border: none;
 }
+.god-mode-button {
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: pink;
+  cursor: pointer;
+  border: none;
+}
 
 .spin-button:hover {
   background-color: #e74c3c; 
