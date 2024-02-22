@@ -27,6 +27,7 @@ class Reel {
     document.querySelector(".slots").appendChild(this.reelElement);
   }
 
+  // Methods
   reelSymbolShuffler() { //Array randomizer 
     for (let i = this.symbolArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

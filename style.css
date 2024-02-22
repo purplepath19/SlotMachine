@@ -1,10 +1,6 @@
-body { 
+body {
   background-image: url(./images/photo.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  
+  background-color: black;
 }
 
 
@@ -30,32 +26,45 @@ body {
 
 .main-title {
   text-align: center;
-  color: #000; 
-  font-family: Bebas Neue ;
+  color: #000;
+  font-family: Bebas Neue;
+  margin: 40px 0 10px;
+}
+
+.winner-text-base {
+  height: 25px;
+}
+
+.winner-text {
+  font-family: "Bebas Neue";
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
 }
 
 /* Slots Style  */
 .slots {
-  margin-top: 50px;
-  display: flex; 
+  margin-top: 30px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  /* background-color: pink; */
+  height: 100px;
+  background-color:rgb(39, 36, 36);
   border-radius: 30px;
   gap: 20px;
-  padding: 0 50px;
+  padding: 0 20px;
 }
 
 /* REEL styles class */
 .reel {
   width: 89px;
   /* height: 200px; */
-  background-color:#fff ;
+  background-color: black;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 0 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -64,27 +73,26 @@ body {
   height: 36px;
   overflow: hidden;
   border-color: #000;
-  border-width: 10px;
+  /* border-width: 5px; */
 }
 
 .spin-button {
   font-family: "Bebas Neue";
-  font-size: 25px;
+  font-size: 15px;
   padding: 15px;
   border-radius: 30px;
-  color: #383838;
-  /* background-color: pink; */
+  color: white;
+  background-color: gray;
   cursor: pointer;
   border: none;
- 
 }
 .god-mode-button {
   font-family: "Bebas Neue";
   font-size: 20px;
   padding: 30px;
   border-radius: 10px;
-  color: #383838;
-  background-color: pink;
+  color: white;
+  background-color:black;
   cursor: pointer;
   border: none;
   font-size: 18px;
@@ -93,17 +101,19 @@ body {
 }
 
 .god-mode-button.active {
-  background-color: #ebbac3;
+  background-color: gray;
 }
 
-.spin-button:hover, .god-mode-button:hover {
-  background-color:  #45a049;
+.spin-button:hover,
+.god-mode-button:hover {
+  background-color: gray;
+  transform: scale(1.1);
 }
 
 .winnings-base {
   font-family: "Bebas Neue";
   height: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 20px;
   color: #383838;
 }
@@ -124,7 +134,7 @@ body {
   top: 0;
 }
 
-.spin { 
+.spin {
   transform: translateY(100%);
 }
 
@@ -145,4 +155,8 @@ body {
 }
 
 
-
+.main-title {
+  color: white; 
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+}
