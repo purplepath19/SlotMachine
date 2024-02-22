@@ -76,3 +76,6 @@ class Reel {
     this.isSpinning = false;
   }
 }
+
+
+//my code is awesome
