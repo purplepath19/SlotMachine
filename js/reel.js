@@ -9,12 +9,22 @@ class Reel {
     ];
 
     this.symbolArray = [...this.defaultSymbols];
-
-    this.element = document.createElement("div");
-    this.element.classList.add("reel");
     this.currentSymbolIndex = 0;
+    this.animationIndex = 0;
+    this.reelElement = document.createElement("div");
+    this.reelElement.classList.add("reel");
+    this.symbolElement = document.createElement("div");
+    this.symbolElement.classList.add("symbol");
+    this.symbolElement2 = this.symbolElement.cloneNode(true);
+    this.symbolStack = [
+      this.symbolElement,
+      this.symbolElement2
+    ];
+    this.reelElement.appendChild(this.symbolElement)
+    this.reelElement.appendChild(this.symbolElement2);
     this.spinInterval = null;
-    document.querySelector(".slots").appendChild(this.element);
+    this.isSpinning = false;
+    document.querySelector(".slots").appendChild(this.reelElement);
   }
 
   reelSymbolShuffler() { //Array randomizer 
@@ -25,18 +35,43 @@ class Reel {
   }
 
   spin(isGodMode) { 
+    if(this.isSpinning) return;
+    this.isSpinning = true;
     this.reelSymbolShuffler();
     if(isGodMode) {
       this.symbolArray = [...this.defaultSymbols];
     }
+    this.reset();
 
     this.spinInterval = setInterval(() => {
-      this.element.textContent = this.symbolArray[this.currentSymbolIndex].symbol;
+      const prevAnimationIndex = this.animationIndex === 0 ? 1 : 0;
+      this.symbolStack[prevAnimationIndex].classList.remove("spin");
+      this.reelElement.removeChild(this.symbolStack[prevAnimationIndex]);
+      this.reelElement.prepend(this.symbolStack[prevAnimationIndex]);
+      this.symbolStack[this.animationIndex].textContent = this.symbolArray[this.currentSymbolIndex].symbol;
+      this.symbolStack[this.animationIndex].classList.add("spin");
       this.currentSymbolIndex = (this.currentSymbolIndex + 1) % this.symbolArray.length;
-    }, 200);
+      this.animationIndex = this.animationIndex === 0 ? 1 : 0; // next index
+    }, 140);
   }
 
   stop() {
+    const prevAnimationIndex = this.animationIndex === 0 ? 1 : 0;
     clearInterval(this.spinInterval);
+    this.isSpinning = false;
+    this.symbolStack[prevAnimationIndex].classList.add("stop-spin");
+  }
+
+  reset() {
+    const prevAnimationIndex = this.animationIndex === 0 ? 1 : 0;
+    this.symbolStack[prevAnimationIndex].classList.remove("stop-spin");
+    this.symbolStack[prevAnimationIndex].classList.remove("spin");
+    this.reelElement.removeChild(this.symbolStack[this.animationIndex]);
+    this.currentSymbolIndex = 0;
+    this.animationIndex = 0;
+    this.reelElement.appendChild(this.symbolElement)
+    this.reelElement.appendChild(this.symbolElement2);
+    this.spinInterval = null;
+    this.isSpinning = false;
   }
 }

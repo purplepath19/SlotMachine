@@ -8,8 +8,9 @@ class SlotMachine {
       new Reel(),
     ];
     this.isGodMode = false;
-    this.winnings = 0;
+    this.winnings = 50;
     this.winningsElement = document.querySelector(".winnings");
+    this.winningsElement.textContent = this.winnings;
 
     this.spinButton.addEventListener("click", () => {
       this.startGame();
@@ -22,13 +23,14 @@ class SlotMachine {
   }
 
   startGame() {
+    this.winnings -= 5;
+    this.winningsElement.textContent = this.winnings;
     this.reels.forEach((reel) => {
       reel.spin(this.isGodMode);
     });
-
     setTimeout(() => {
       this.stopGame();
-    }, 1000)
+    }, 2000)
   }
 
   stopGame() {
@@ -36,10 +38,6 @@ class SlotMachine {
       reel.stop();
     });
     this.checkWin();
-  }
-
-  printWinnings() {
-
   }
 
   checkWin() {
