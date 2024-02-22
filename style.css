@@ -1,9 +1,19 @@
+body { 
+  background-image: url(./images/photo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  
+}
+
+
 /* .app-base {
   width: 100%;
   height: 100%;
-} */
+}
 
-/* .bg-design {
+.bg-design {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +41,7 @@
   justify-content: center;
   align-items: center;
   height: 300px;
-  background-color: pink;
+  /* background-color: pink; */
   border-radius: 30px;
   gap: 20px;
   padding: 0 50px;
@@ -53,17 +63,20 @@
   position: relative;
   height: 36px;
   overflow: hidden;
+  border-color: #000;
+  border-width: 10px;
 }
 
 .spin-button {
   font-family: "Bebas Neue";
   font-size: 25px;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 30px;
   color: #383838;
-  background-color: pink;
+  /* background-color: pink; */
   cursor: pointer;
   border: none;
+ 
 }
 .god-mode-button {
   font-family: "Bebas Neue";
@@ -84,8 +97,7 @@
 }
 
 .spin-button:hover, .god-mode-button:hover {
-  background-color: #ffeaed; 
-
+  background-color:  #45a049;
 }
 
 .winnings-base {
@@ -131,3 +143,6 @@
 .mt-20 {
   margin-top: 20px;
 }
+
+
+
