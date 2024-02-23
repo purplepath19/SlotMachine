@@ -13,42 +13,68 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <!-- Header -->
-<div id="app" class="app-base">
-  <header>
-    <h1 class="main-title">Spinner</h1>
-    <div class="winner-text-base">
-      <h5 class="winner-text" style="display: none;">You Win!!!</h5>
-    </div>
-  </header>
-  <main class="flex-center-column"> 
+    <div id="app" class="app-base">
+      <header>
+        <h1 class="main-title"> Inflation-Proof Spins </h1>
     
-    <section class="slots"></section>
 
-    <div class="winnings-base">
-      <span class="cash">Cash: $</span><span class="winnings"></span>
+        <!-- Win container -->
+        <div class="winner-container">
+          <div class="money">
+            <span class="dollar" style="display: none">$ </span>
+            <span class="dollar" style="display: none">$ </span>
+
+            <!-- <span class="dollar">$ </span>
+            <span class="dollar">$ </span>
+            <span class="dollar">$ </span> -->
+
+
+          </div>
+
+          <div class="winner-text-base">
+
+            <h5 class="winner-text" style="display: none;">You Win!!! $</h5>
+
+            
+            <!-- <div class="money" style="display: none;"><span class="dollar"> </span></div> -->
+          
+
+          </div>
+
+        
+
+
+
+        </div>
+
+
+      </header>
+      <main class="flex-center-column">
+        <section class="slots"></section>
+
+        <div class="winnings-base">
+          <span class="cash">Cash: $</span><span class="winnings"></span>
+        </div>
+      </main>
+
+      <!-- Button Div -->
+      <footer class="control-ui flex-center-column">
+        <!-- Spin Button -->
+        <div class="flex-center-column mt-20">
+          <div class="button-base">
+            <button id="startSpinButton" class="spin-button">Spin the reels</button>
+          </div>
+        </div>
+        <div class="flex-center-column mt-20">
+          <div class="button-base">
+            <button id="godMode" class="god-mode-button">Win</button>
+          </div>
+        </div>
+      </footer>
     </div>
 
-  </main>
-  <!-- Button Div -->
-  <footer class="control-ui flex-center-column">
-    <!-- Spin Button -->
-    <div class="flex-center-column mt-20">
-      <div class="button-base">
-        <button id="startSpinButton" class="spin-button">Spin the reels</button>
-      </div>
-    </div>
-    <div class="flex-center-column mt-20">
-      <div class="button-base">
-        <button id="godMode" class="god-mode-button">Win</button>
-      </div>
-    </div>
-  </footer>
-</div>
-  
-<script src="./js/reel.js"> </script>
-<script src="./js/slotMachine.js"> </script>
-
+    <script src="./js/reel.js"></script>
+    <script src="./js/slotMachine.js"></script>
   </body>
 </html>

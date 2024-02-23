@@ -20,6 +20,8 @@ class Reel {
       this.symbolElement,
       this.symbolElement2
     ];
+
+    
     this.reelElement.appendChild(this.symbolElement)
     this.reelElement.appendChild(this.symbolElement2);
     this.spinInterval = null;
@@ -34,6 +36,7 @@ class Reel {
       [this.symbolArray[i], this.symbolArray[j]] = [this.symbolArray[j], this.symbolArray[i]];
     }
   }
+  
 
   spin(isGodMode) { 
     if(this.isSpinning) return;

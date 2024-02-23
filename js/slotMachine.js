@@ -12,6 +12,8 @@ class SlotMachine {
     this.winningsElement = document.querySelector(".winnings");
     this.winningsElement.textContent = this.winnings;
 
+    
+
     this.spinButton.addEventListener("click", () => {
       this.startGame();
     });
@@ -23,7 +25,8 @@ class SlotMachine {
   }
 
   startGame() {
-    document.querySelector(".winner-text").style.display = "none"
+    document.querySelector(".winner-text").style.display = "none";
+    document.querySelector(".money").style.display = "none";
     this.winnings -= 5;
     this.winningsElement.textContent = this.winnings;
     this.reels.forEach((reel) => {
@@ -58,9 +61,20 @@ class SlotMachine {
     if(isWinner) {
       this.winnings += finalSymbols[0].value;
       document.querySelector(".winner-text").style.display = "block"
+
+
+      const moneyElements = document.querySelectorAll(".dollar");
+      moneyElements.forEach((moneyElement) => {
+        moneyElement.style.display = "block";
+      });
+
+  
+
+
     }
 
     this.winningsElement.textContent = this.winnings;
+    this.moneyElement.textContent = this.winnings;
   }
 }
 

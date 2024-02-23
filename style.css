@@ -88,7 +88,7 @@ body {
 }
 .god-mode-button {
   font-family: "Bebas Neue";
-  font-size: 20px;
+  font-size: 5px;
   padding: 30px;
   border-radius: 10px;
   color: white;
@@ -106,7 +106,7 @@ body {
 
 .spin-button:hover,
 .god-mode-button:hover {
-  background-color: gray;
+  background-color: red; 
   transform: scale(1.1);
 }
 
@@ -159,4 +159,78 @@ body {
   color: white; 
   font-size: 2.5rem;
   letter-spacing: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.money {
+  text-align: center;
+  color:green;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  animation: fall 2s linear infinite ;
+ 
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+  
+}
+
+
+
+
+.winner-text {
+  font-size: 50px;
+  animation: popOutMoney 1s ease-out forwards;
+}
+
+@keyframes popOutMoney {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+.cash {
+
+  color:green;
+ 
+}
+.winnings {
+  color:green;
 }
